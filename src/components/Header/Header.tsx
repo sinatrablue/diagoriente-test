@@ -8,7 +8,7 @@ import HeaderLink from "./HeaderLink";
 export default function Header() {
   // h-20 = 5rem = 80px
   return (
-    <div className="h-20 shadow-md flex items-center">
+    <div className="h-20 shadow-md flex items-center shrink-0">
       <div className="h-full px-10 border-r-2 border-gray-100 flex items-center">
         <BlahblahLogo />
       </div>
