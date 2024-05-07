@@ -1,8 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
-import { CardProps } from "../Card/Card";
+import { CardProps } from "../../components/Card/Card";
 import { z } from "zod";
+import { useNavigate } from "react-router-dom";
 
-export function useMainFrameController() {
+export function useThemesFormController() {
+  const navigate = useNavigate();
+
   // Should've came from an API call
   const cards: Pick<CardProps, "id" | "text">[] = useMemo(
     () => [
@@ -39,9 +42,8 @@ export function useMainFrameController() {
   const submitThemes = () => {
     try {
       idsArraySchema.parse(checkedCards);
-      console.log("nice");
+      navigate("/carousel");
     } catch {
-      console.log("nope");
       setIsFormError(true);
     }
   };
