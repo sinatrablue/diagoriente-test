@@ -7,7 +7,7 @@ export default function MainFrame() {
     <Routes>
       <Route path="*" element={<></>} />
       <Route path="/themes" element={<ThemesForm />} />
-      <Route path="/carousel" element={<CarouselForm />} />
+      <Route path="/themes/carousel" element={<CarouselForm />} />
     </Routes>
   );
 }

@@ -21,8 +21,8 @@ export default function Header() {
         <div className="flex gap-7 items-center">
           <UnAutreLogo />
           <HeaderLink text="Rore mipsum" path="/themes" />
-          <HeaderLink text="Corem ipsumdolor" path="/" />
-          <HeaderLink text="Lorem ipsumdolor" path="/" />
+          <HeaderLink text="Corem ipsumdolor" path="/help" />
+          <HeaderLink text="Lorem ipsumdolor" path="/credits" />
         </div>
         <div className="flex items-center">
           <span className="px-5 py-3">Aide</span>
