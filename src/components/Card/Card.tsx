@@ -16,7 +16,7 @@ export default function Card({
   return (
     <button
       onClick={() => onClick(id)}
-      className={`flex gap-4 py-4 px-5 rounded h-14 w-[521px] ${
+      className={`flex gap-4 py-4 px-5 rounded-md h-14 w-[521px] ${
         isChecked ? "bg-[#F0F4FF]" : "bg-[#F6F6F8]"
       }`}
     >

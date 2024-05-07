@@ -1,5 +1,6 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { CardProps } from "../Card/Card";
+import { z } from "zod";
 
 export function useMainFrameController() {
   // Should've came from an API call
@@ -26,5 +27,24 @@ export function useMainFrameController() {
     });
   };
 
-  return { cards, checkedCards, onCardCheck };
+  // Form validation
+  const idsArraySchema = z.string().array().nonempty();
+
+  const [isFormError, setIsFormError] = useState(false);
+
+  useEffect(() => {
+    if (isFormError && checkedCards.length > 0) setIsFormError(false);
+  }, [checkedCards]);
+
+  const submitThemes = () => {
+    try {
+      idsArraySchema.parse(checkedCards);
+      console.log("nice");
+    } catch {
+      console.log("nope");
+      setIsFormError(true);
+    }
+  };
+
+  return { cards, checkedCards, onCardCheck, isFormError, submitThemes };
 }
