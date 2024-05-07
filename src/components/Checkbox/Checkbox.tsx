@@ -5,7 +5,7 @@ export default function Checkbox({
 }: Readonly<{ isChecked: boolean }>) {
   return (
     <button
-      className={`flex items-center justify-center h-6 w-6 rounded-lg ${
+      className={`flex items-center justify-center min-h-6 min-w-6 rounded-lg ${
         isChecked ? "bg-[#494BFF]" : "border border-[#A4A5FF]"
       }`}
     >

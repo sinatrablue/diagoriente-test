@@ -22,6 +22,7 @@ export default function ThemesForm() {
                 isChecked={checkedCards.includes(card.id)}
                 onClick={onCardCheck}
                 key={card.id}
+                variant="standard"
               />
             ))}
           </div>
@@ -31,7 +32,7 @@ export default function ThemesForm() {
           {isFormError && <ErrorBadge text="Veuillez sélectionner un thème" />}
         </div>
       </div>
-      <Button text="Suivant" onClick={submitThemes} />
+      <Button text="Suivant" onClick={submitThemes} variant="large" />
     </div>
   );
 }

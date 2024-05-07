@@ -42,7 +42,7 @@ export function useThemesFormController() {
   const submitThemes = () => {
     try {
       idsArraySchema.parse(checkedCards);
-      navigate("/carousel");
+      navigate("/themes/carousel");
     } catch {
       setIsFormError(true);
     }

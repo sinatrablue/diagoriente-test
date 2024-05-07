@@ -5,6 +5,7 @@ export type CardProps = {
   id: string;
   isChecked: boolean;
   onClick: (id: string) => void;
+  variant: "standard" | "slim";
 };
 
 export default function Card({
@@ -12,16 +13,17 @@ export default function Card({
   id,
   isChecked,
   onClick,
+  variant,
 }: Readonly<CardProps>) {
   return (
     <button
       onClick={() => onClick(id)}
-      className={`flex gap-4 py-4 px-5 rounded-md h-14 w-[521px] ${
-        isChecked ? "bg-[#F0F4FF]" : "bg-[#F6F6F8]"
-      }`}
+      className={`flex gap-4 ${
+        variant === "slim" ? "py-3 px-4" : "py-4 px-5"
+      } rounded-md w-[521px] ${isChecked ? "bg-[#F0F4FF]" : "bg-[#F6F6F8]"}`}
     >
       <Checkbox isChecked={isChecked} />
-      <span>{text}</span>
+      <span className="text-start">{text}</span>
     </button>
   );
 }
